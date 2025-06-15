@@ -1,0 +1,57 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    border: 3px solid white;
+    color: white;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    border: 2px solid red;
+    margin: 50px;
+}
+
+.header {
+    height: 50px;
+    width: 100%;
+    background-color: blue;
+}
+
+.spotify {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.spotifylogo {
+    padding-top: 2px;
+    width: 30px;
+    height: 30px;
+}
+
+.home {
+    background-color: #1f1f1f;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.homelogo {
+    width: 50%;
+}
+
+.right-header{
+    height:100%;
+    width: 150px;
+}
+p{
+
+}
