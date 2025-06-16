@@ -16,13 +16,19 @@ body {
     height: 100%;
     width: 100%;
     border: 2px solid red;
-    margin: 50px;
+    padding: 10px;
 }
 
 .header {
     height: 50px;
     width: 100%;
-    background-color: blue;
+}
+
+
+.left-header {
+    height: 100%;
+    width: 400px;
+    gap: 10px;
 }
 
 .spotify {
@@ -48,10 +54,37 @@ body {
     width: 50%;
 }
 
-.right-header{
-    height:100%;
-    width: 150px;
-}
-p{
+.right-header {
+    height: 100%;
+    width: 260px;
 
+}
+
+.signup-container {
+    color: #b3b3b3;
+    background-color: black;
+    padding: 2px;
+    width: 125px;
+    margin: 2px 2px 2px 20px;
+
+}
+
+.signup-container:hover{
+   font-size: 1.01em;
+    color: white;
+    cursor: pointer;
+}
+
+.login-container {
+    color: rgba(0, 0, 0, 0.721);
+    font-weight: bolder;
+    background-color: whitesmoke;
+    width: 125px;
+    border-radius: 20px;
+    margin: 2px 2px 2px 2px;
+}
+
+.login-container:hover{
+ font-size: 1.02em;
+ color: black;
 }
