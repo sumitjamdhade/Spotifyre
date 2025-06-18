@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-    height: 100%;
+    height: 700px;
     width: 100%;
     border: 2px solid red;
     padding: 10px;
@@ -87,4 +87,38 @@ body {
 .login-container:hover{
  font-size: 1.02em;
  color: black;
+}
+
+.main-content{
+    height: 90%;
+    min-height: max-content;
+}
+
+.left{
+    background-color: #1f1f1f;
+    width: 25vw;
+height: 100%;
+position: relative;
+}
+
+h2{
+font-size: 30px;
+}
+
+.navlinks{
+    position: absolute;
+    bottom:0px;
+    margin-bottom: 10px;
+    
+}
+
+
+.right{
+    background-color: rgba(61, 60, 60, 0.772);
+    width: 75vw;
+}
+
+.card{
+    width: 200px;
+    
 }
