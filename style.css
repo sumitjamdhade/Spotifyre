@@ -121,6 +121,17 @@ h2 {
     font-size: 20px;
 }
 
+.songList {
+    font-size: small;
+}
+
+.songList ul{
+    padding: 20px;
+}
+
+.songList ul li {
+    list-style-type: decimal;
+}
 .navlinks {
     position: absolute;
     bottom: 0px;
@@ -136,8 +147,45 @@ h2 {
     padding: 15px;
 }
 
-.card {
+.song-list {
+    height: 400px;
+    padding: 20px;
+    flex-wrap: wrap;
+    gap: 30px;
+    overflow: scroll;
+    scrollbar-color: rgba(153, 151, 151, 0.525);
+;
+
+}
+
+.card { 
     width: 200px;
+    height: 275px;
     margin-top: 20px;
 }
 
+.card img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.singer {
+    color: #ebe9e9;
+    font-size: small;
+}
+
+.card > * {
+    padding: 5px;
+}
+
+.playbar {
+    background-color: rgb(148, 160, 139);
+    width: 80vw;
+    height: 50px;
+}
+
+.playbar svg {
+height: 40px ;
+width: 75px;
+padding: 2px;
+}

@@ -1,0 +1,30 @@
+let songs = [
+    "http://127.0.0.1:5500/Songs/Ed%20Sheeran%20-%20Sapphire%20(Official%20Music%20Video).mp3",
+    "http://127.0.0.1:5500/Songs/Ehsan%20Tera%20Hoga%20Mujh%20Par%20with%20Lyrics%20%20%20%20%20%20%20%20%20%20Mohammed%20Rafi.mp3",
+    "http://127.0.0.1:5500/Songs/Ed%20Sheeran%20%20Perfect%20Official%20Music%20Video.mp3",
+    "http://127.0.0.1:5500/Songs/Aashiq%20Tera%20%20Full%20Audio%20Song%20%20Happy%20Bhag%20Jayegi.mp3",
+    "http://127.0.0.1:5500/Songs/Ricky%20Montgomery%20%20Line%20Without%20a%20Hook%20Official%20Music%20Video.mp3"
+
+
+    //i may fetch songs using these urls by applying a for loop 
+]
+
+async function getSongs() {
+
+    var audio = new Audio(songs[0]);
+    // audio.play()
+
+    let songUL = document.querySelector(".songList").getElementsByTagName("ul")[0]
+    for (const song of songs) {
+        songUL.innerHTML = songUL.innerHTML + `<li> ${song.split("Songs/")[1].replaceAll("%20", " ")} </li>`;
+        
+        
+    }
+
+
+}
+
+getSongs();
+
+
+
