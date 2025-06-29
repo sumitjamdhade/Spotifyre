@@ -13,10 +13,13 @@ body {
 }
 
 .container {
-    height: 700px;
+    height: 100%;
     width: 100%;
     border: 2px solid red;
     padding: 10px;
+    min-width: 1200px;
+    min-height: 500px;
+   
 }
 
 .header {
@@ -96,6 +99,7 @@ body {
     width: 125px;
     border-radius: 20px;
     margin: 2px 2px 2px 2px;
+    cursor: pointer;
 }
 
 .login-container:hover {
@@ -105,12 +109,13 @@ body {
 
 .main-content {
     height: 90%;
-    min-height: max-content;
+   width: 100%;
+
 }
 
 .left {
     background-color: #1f1f1f;
-    width: 25vw;
+    width: 25%;
     height: 100%;
     position: relative;
     margin: 5px 0px 5px 5px;
@@ -135,7 +140,7 @@ h2 {
     gap: 20px;
     height: 60px;
     margin: 20px 0;
-    border: 0.5px solid #b3b3b3;
+    border: 0.5px solid #503050;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -164,9 +169,11 @@ h2 {
 
 .right {
     background-color: rgba(61, 60, 60, 0.772);
-    width: 75vw;
+    width: 75%;
+    height: 100%;
     margin: 5px;
     padding: 15px;
+
 }
 
 .song-list {
@@ -175,7 +182,8 @@ h2 {
     flex-wrap: wrap;
     gap: 30px;
     overflow-y: scroll;
-    scrollbar-color: rgba(153, 151, 151, 0.525);
+    scrollbar-color: rgba(41, 41, 41, 0.543);
+    scrollbar-arrow-color: #503050;
 }
 
 .card {
@@ -201,15 +209,54 @@ h2 {
     padding: 5px;
 }
 
-.playbar {
-    background-color: rgb(148, 160, 139);
-    width: 80vw;
-    height: 50px;
+.play-container {
+    background-color: rgba(6, 6, 6, 0.616);
+    width: 70vw;
+    height: 80px;
+    position: fixed;
+    right: 52px;
+    bottom: 30px;
+    border-radius: 20px;
+  
+
 }
 
-.playbar svg {
+.song-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+    color: rgb(255, 255, 255);
+    font-size: small;
+}
+.playline{
+    width: 90%;
+    height: 5px;
+    border-radius: 10px;
+    background-color: white;
+    margin: 5px 30px;
+    position: absolute;
+    bottom: 0;
+    left: 22px;
+}
+
+.circle{
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: white;
+    margin: 3px 30px;
+    position: absolute;
+    bottom: 0;
+    left: 22px;
+}
+
+
+.playbar img {
     height: 40px;
     width: 75px;
     padding: 2px;
+    filter: invert();
+    cursor: pointer;
 }
+
 

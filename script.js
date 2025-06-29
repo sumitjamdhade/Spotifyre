@@ -6,15 +6,26 @@ let songs = [
     "http://127.0.0.1:5500/Songs/Ricky%20Montgomery%20%20Line%20Without%20a%20Hook%20Official%20Music%20Video.mp3"
 
 
-    //i may fetch songs using these urls, by applying a for loop 
+    //may fetch songs using these urls, by applying a for loop 
 ]
 
-let currentaudio = new Audio()
+let currentaudio = new Audio();
+let playbtn = document.querySelector(".playbtn");
 
 const playAudio = (track)=>{
 
   currentaudio.src = "/Songs/" + track
-  currentaudio.play()
+  currentaudio.play();
+document.querySelector("#nameofsong").innerHTML = track;
+
+}
+
+const secondsToMinutes = (some) => {
+const minutes = Math.floor(some / 60);
+const seconds = Math.floor((some % 60));
+let progress = `${minutes}:${seconds}`
+
+return progress
 }
 
 async function getSongs() {
@@ -38,12 +49,40 @@ async function getSongs() {
     }
 
     Array.from(document.querySelector(".songList").getElementsByTagName("li")).forEach(element => {
+
       element.addEventListener("click", e=>{
             console.log(element.querySelector(".info").firstElementChild.innerHTML)
             playAudio(element.querySelector(".info").firstElementChild.innerHTML.trim())
+            playbtn.src="pause.svg"
+            
       })
       
     });
+
+
+    playbtn.addEventListener("click", ()=>{
+      if(currentaudio.paused){
+        
+        playbtn.src = "pause.svg"
+        
+        currentaudio.play();
+      }
+      else if(!currentaudio.paused) {
+        currentaudio.pause();
+        playbtn.src = "play.svg";
+       
+      }
+      else{
+        currentaudio.play()
+      }
+    })
+
+    currentaudio.addEventListener("timeupdate",()=>{
+      console.log(currentaudio.currentTime,currentaudio.duration);
+      console.log(`${secondsToMinutes(currentaudio.currentTime)} / ${secondsToMinutes(currentaudio.duration)}`)
+      document.getElementById("time-update").innerHTML= `${secondsToMinutes(currentaudio.currentTime)} / ${secondsToMinutes(currentaudio.duration)}`;
+    })
+  
 }
 
 getSongs();
