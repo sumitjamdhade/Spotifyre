@@ -12,6 +12,7 @@ let songs = [
 let currentaudio = new Audio();
 let playbtn = document.querySelector(".playbtn");
 
+//function to play music
 const playAudio = (track)=>{
 
   currentaudio.src = "/Songs/" + track
@@ -20,6 +21,8 @@ document.querySelector("#nameofsong").innerHTML = track;
 
 }
 
+
+//function to convert seconds to minutes
 const secondsToMinutes = (some) => {
 const minutes = Math.floor(some / 60);
 const seconds = Math.floor((some % 60));
@@ -28,11 +31,12 @@ let progress = `${minutes}:${seconds}`
 return progress
 }
 
+
+
+//main function
 async function getSongs() {
 
-    // var audio = new Audio(songs[0]);
-    // audio.play()
-
+  //get all songs
     let songUL = document.querySelector(".songList").getElementsByTagName("ul")[0]
     for (const eachsong of songs) {
         let song = eachsong.split("Songs/")[1].replaceAll("%20", " ")
@@ -48,6 +52,7 @@ async function getSongs() {
                             </li>`;
     }
 
+//listen for an event to play the music
     Array.from(document.querySelector(".songList").getElementsByTagName("li")).forEach(element => {
 
       element.addEventListener("click", e=>{
@@ -59,7 +64,7 @@ async function getSongs() {
       
     });
 
-
+//listen to event for play buttons
     playbtn.addEventListener("click", ()=>{
       if(currentaudio.paused){
         
@@ -77,12 +82,25 @@ async function getSongs() {
       }
     })
 
+
+//listen to timeupdate event
     currentaudio.addEventListener("timeupdate",()=>{
       console.log(currentaudio.currentTime,currentaudio.duration);
       console.log(`${secondsToMinutes(currentaudio.currentTime)} / ${secondsToMinutes(currentaudio.duration)}`)
       document.getElementById("time-update").innerHTML= `${secondsToMinutes(currentaudio.currentTime)} / ${secondsToMinutes(currentaudio.duration)}`;
-    })
+      document.querySelector(".circle").style.left = (currentaudio.currentTime/currentaudio.duration)*100 + "%" 
+      })
   
 }
+
+//listen to event for playline
+document.querySelector(".playline").addEventListener("click", (e)=>{
+  console.log(e.offsetX, e.target.getBoundingClientRect().width);
+  perc = (e.offsetX / e.target.getBoundingClientRect().width)*100;
+  document.querySelector(".circle").style.left = perc + "%";
+  currentaudio.currentTime = (currentaudio.duration * perc  )/100;
+
+  console.count();
+})
 
 getSongs();
